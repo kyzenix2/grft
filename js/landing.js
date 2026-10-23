@@ -1,5 +1,5 @@
 (function () {
-  const CONTRACT = "0x9f4ba41f91a59a34e17ee8c9eb3a51363b11abd5";
+  const CONTRACT = "0xd93ec2a7ab50a03fbafbfd65983903630933810e";
   const SYSTEMS = {
     bank: {
       title: "Bank & credit",
@@ -140,7 +140,7 @@
   }
 
   function setWallet(addr) {
-    localStorage.setItem("grift-wallet", addr);
+    localStorage.setItem("GRFT-wallet", addr);
     $("#lp-doors").hidden = true;
     $("#lp-connected").hidden = false;
     $("#lp-idaddr").textContent = shortAddr(addr);
@@ -148,7 +148,7 @@
   }
 
   function restoreWallet() {
-    const addr = localStorage.getItem("grift-wallet");
+    const addr = localStorage.getItem("GRFT-wallet");
     if (addr) setWallet(addr);
   }
 
@@ -201,9 +201,9 @@
   function wirePerf() {
     const box = $("#lp-perfmode");
     if (!box) return;
-    box.checked = localStorage.getItem("grift-perf") === "1";
+    box.checked = localStorage.getItem("GRFT-perf") === "1";
     box.addEventListener("change", () => {
-      localStorage.setItem("grift-perf", box.checked ? "1" : "0");
+      localStorage.setItem("GRFT-perf", box.checked ? "1" : "0");
     });
   }
 

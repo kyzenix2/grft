@@ -1,11 +1,11 @@
 import * as THREE from "three";
 
-const perf = localStorage.getItem("grift-perf") === "1";
-const spectate = new URLSearchParams(location.search).has("spectate") || !localStorage.getItem("grift-wallet");
-const wallet = localStorage.getItem("grift-wallet");
+const perf = localStorage.getItem("GRFT-perf") === "1";
+const spectate = new URLSearchParams(location.search).has("spectate") || !localStorage.getItem("GRFT-wallet");
+const wallet = localStorage.getItem("GRFT-wallet");
 
 document.getElementById("mode").textContent = spectate ? "SPECTATE" : "PLAY";
-document.getElementById("splash-kicker").textContent = spectate ? "NO WALLET / SAN VERANO" : "GRIFT / SAN VERANO";
+document.getElementById("splash-kicker").textContent = spectate ? "NO WALLET / SAN VERANO" : "GRFT / SAN VERANO";
 document.getElementById("splash-title").textContent = spectate ? "WATCH THE CITY" : "ENTER SAN VERANO";
 if (wallet && wallet !== "0x0000000000000000000000000000000000000000") {
   document.getElementById("cash").textContent = "$240";

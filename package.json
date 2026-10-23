@@ -1,5 +1,5 @@
 {
-  "name": "grift-world-clone",
+  "name": "GRFT-world-clone",
   "private": true,
   "scripts": {
     "start": "npx --yes serve -l 4173 ."

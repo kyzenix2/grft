@@ -1,4 +1,4 @@
-window.GRIFT_PAGES = [
+window.GRFT_PAGES = [
   { file: "guide.html", kicker: "PLAYER MANUAL", title: "How to enter San Verano.", lede: "Play: connect a wallet, sign once, create your character. Spectate: watch the city. No wallet needed.", cards: [
     ["Connect", "Sign once. Your address becomes a resident."],
     ["Work", "Take jobs, run deliveries, trade the tape."],

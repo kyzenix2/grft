@@ -1,5 +1,5 @@
 /* =====================================================================
- GRIFT — THE FRONT DOOR.
+ GRFT — THE FRONT DOOR.
 
  The screen: the hero, the two ways in, the status strip, over a
  rotation of frames from the running city. Under it, the page: what
@@ -287,7 +287,7 @@
 /* AND THE FILL IS A TOKEN, NOT A COLOUR. It was var(--gr-ink) — the page's own
  ivory, which made the button the brightest thing on the screen by a wide
  margin. The four --gr-btn-* values in css/palette.css carry the reasoning
- and are read by the manual's PLAY GRIFT as well, so the two cannot drift. */
+ and are read by the manual's PLAY GRFT as well, so the two cannot drift. */
 /* AND .fd-walletpick IS IN THE LIST BECAUSE THE SHEET IS NOT IN #landing.
  js/landing.js appends the wallet sheet to document.body, so every rule
  scoped to #landing misses it. Measured, with the install state open:
@@ -603,7 +603,7 @@
 .fd-gate-btn { width: auto; padding: 12px 18px; }
 
 /* ---- a note under a row of cards -------------------------------------
- THE ONE LINE ON A SECTION THAT MUST NOT BE OPTIONAL. The $GRIFT section's
+ THE ONE LINE ON A SECTION THAT MUST NOT BE OPTIONAL. The $GRFT section's
  not-live disclosure used to be the fourth card, which made it a peer of the
  three claims beside it; as a line under the row it reads as the caveat over
  all of them, which is what it is. Muted, but not so muted that it reads as

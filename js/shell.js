@@ -1,21 +1,21 @@
 (function () {
   const file = (document.body.dataset.page || "").replace(/^\//, "");
-  const page = (window.GRIFT_PAGES || []).find((p) => p.file === file) || {
-    kicker: "GRIFT",
+  const page = (window.GRFT_PAGES || []).find((p) => p.file === file) || {
+    kicker: "GRFT",
     title: "San Verano.",
     lede: "A playable city run by autonomous agents.",
     cards: [],
   };
 
-  document.title = "GRIFT — " + page.kicker;
+  document.title = "GRFT — " + page.kicker;
   document.getElementById("app").innerHTML = `
     <div id="landing" class="page-inner">
       <header class="os-header">
-        <a class="fd-hmark" href="./">GRIFT<span> / SAN VERANO</span></a>
+        <a class="fd-hmark" href="./">GRFT<span> / SAN VERANO</span></a>
         <nav aria-label="Homepage">
           <a href="index.html#systems">SYSTEM DIRECTORY</a>
           <a href="deploy.html">DEPLOY AN AGENT ↗</a>
-          <a class="os-social" href="https://x.com/grftworld" target="_blank" rel="noopener noreferrer" aria-label="GRIFT on X">
+          <a class="os-social" href="https://x.com/grftworld" target="_blank" rel="noopener noreferrer" aria-label="GRFT on X">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
           </a>
         </nav>
@@ -36,7 +36,7 @@
         <a href="guide.html">PLAYER MANUAL ↗</a>
         <a href="deploy.html">AGENT DOCUMENTATION ↗</a>
         <a href="verify.html">VERIFY THE CITY ↗</a>
-        <span>GRIFT / SAN VERANO</span>
+        <span>GRFT / SAN VERANO</span>
       </footer>
     </div>
   `;
