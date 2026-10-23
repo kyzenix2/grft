@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRIFT — San Verano</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/palette.css">
+  <style>
+    html, body { height: 100%; overflow: hidden; background: #05060a; }
+    #view { position: fixed; inset: 0; }
+    #view canvas { width: 100%; height: 100%; display: block; }
+    .hud { position: fixed; inset: 0; pointer-events: none; z-index: 5; color: #ede6d6; font-family: var(--gr-body); }
+    .hud * { pointer-events: none; }
+    .hud a, .hud button { pointer-events: auto; }
+    .hud-top {
+      position: absolute; top: 18px; left: 22px; right: 22px;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    }
+    .stat { min-width: 88px; }
+    .stat small { display: block; font: 9px var(--gr-mono); letter-spacing: .16em; color: #b6b0a3; }
+    .stat b { display: block; margin-top: 4px; font: 22px var(--gr-display); color: #ede6d6; }
+    .clock { text-align: center; font: 28px var(--gr-display); letter-spacing: .08em; }
+    .hud-right { display: flex; gap: 22px; }
+    .exit {
+      position: absolute; top: 18px; right: 22px;
+      background: rgba(8,9,10,.55); border: 1px solid rgba(237,230,214,.18);
+      color: #ede6d6; font: 10px var(--gr-mono); letter-spacing: .14em;
+      padding: 10px 14px; text-decoration: none; backdrop-filter: blur(6px);
+    }
+    .exit:hover { color: #d2a369; }
+    .hint {
+      position: absolute; left: 22px; bottom: 22px;
+      font: 10px var(--gr-mono); letter-spacing: .14em; color: #b6b0a3;
+    }
+    .center-title {
+      position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
+      text-align: center; text-shadow: 0 8px 40px #000a;
+    }
+    .center-title small { font: 10px var(--gr-mono); letter-spacing: .22em; color: #c6ad85; }
+    .center-title h1 { margin: 10px 0 0; font: 700 clamp(42px, 8vw, 92px)/.86 var(--gr-display); }
+    .loadout {
+      position: absolute; right: 22px; bottom: 22px; text-align: right;
+    }
+    .loadout small { font: 9px var(--gr-mono); letter-spacing: .16em; color: #b6b0a3; }
+    .loadout b { display: block; margin-top: 4px; font: 20px var(--gr-display); }
+    .mode {
+      position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+      font: 9px var(--gr-mono); letter-spacing: .18em; color: #7f7b73;
+    }
+  </style>
+</head>
+<body>
+  <div id="view"></div>
+  <div class="hud">
+    <div class="hud-top">
+      <div class="hud-right">
+        <div class="stat"><small>CASH</small><b id="cash">$0</b></div>
+        <div class="stat"><small>HEAT</small><b id="heat">0</b></div>
+        <div class="stat"><small>SPEED</small><b id="speed">0</b></div>
+      </div>
+      <div class="clock" id="clock">10:00</div>
+      <a class="exit" href="index.html">LEAVE CITY ↗</a>
+    </div>
+    <div class="center-title" id="splash">
+      <small id="splash-kicker">GRIFT / SAN VERANO</small>
+      <h1 id="splash-title">ENTER SAN VERANO</h1>
+    </div>
+    <div class="hint">WASD · LOOK · SHIFT SPRINT</div>
+    <div class="loadout"><small>LOADOUT</small><b id="loadout">PISTOL</b></div>
+    <div class="mode" id="mode">SPECTATE</div>
+  </div>
+  <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="js/city.js"></script>
+</body>
+</html>

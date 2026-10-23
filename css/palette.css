@@ -1,0 +1,142 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+img, svg, canvas { display: block; max-width: 100%; }
+:root {
+  --gr-accent-rgb: 111, 200, 220;
+  --gr-accent-dk: #2d6b7b;
+  --gr-void: #08090a;
+  --gr-bg: #0b0c0e;
+  --gr-panel: #131619;
+  --gr-panel-hi: #1a1e22;
+  --gr-panel-a: rgba(19, 22, 25, .88);
+  --gr-panel-a6: rgba(19, 22, 25, .60);
+  --gr-line: rgba(237, 230, 214, .10);
+  --gr-line-2: rgba(237, 230, 214, .18);
+  --gr-line-3: rgba(237, 230, 214, .30);
+  --gr-ink: #ede6d6;
+  --gr-ink-2: #b6b0a3;
+  --gr-ink-3: #7f7b73;
+  --gr-ink-4: #5c5954;
+  --gr-accent: rgb(var(--gr-accent-rgb));
+  --gr-accent-a: rgba(var(--gr-accent-rgb), .14);
+  --gr-accent-a2: rgba(var(--gr-accent-rgb), .26);
+  --gr-accent-a4: rgba(var(--gr-accent-rgb), .45);
+  --gr-on-accent: #06181d;
+  --gr-btn-fill: #d8cdb6;
+  --gr-btn-ink: #0d0c09;
+  --gr-btn-hi: #e7dfcc;
+  --gr-btn-edge: #c9bda4;
+  --gr-btn-radius: 999px;
+  --gr-caution: #e0a33c;
+  --gr-danger: #d8564f;
+  --gr-display: 'Pixelify Sans', 'Arial Narrow', sans-serif;
+  --gr-body: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --gr-data: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  --gr-mono: var(--gr-data);
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('../fonts/pixelifysans.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background: var(--gr-void);
+  color: var(--gr-ink);
+  font-family: var(--gr-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.fd-walletpick {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: rgba(8, 9, 10, .72);
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+.fd-walletpick[hidden] { display: none; }
+.fd-walletsheet {
+  width: min(100%, 420px);
+  background: #151611;
+  border: 1px solid #554630;
+  padding: 28px 26px;
+  box-shadow: 0 30px 80px #000a;
+}
+.fd-walletsheet h2 {
+  margin: 0;
+  font: 28px/1.1 var(--gr-display);
+  color: #e5d8bb;
+}
+.fd-walletsheet p {
+  margin: 10px 0 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #b4ac9b;
+}
+.fd-walletlist { display: grid; gap: 8px; }
+.fd-walletopt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  background: #1c1e18;
+  border: 1px solid #484833;
+  color: #e6dac8;
+  cursor: pointer;
+}
+.fd-walletopt:hover { border-color: #d2a369; background: #2a2419; }
+.fd-walletopt b { font: 14px var(--gr-body); font-weight: 500; }
+.fd-walletopt small { font: 9px var(--gr-mono); letter-spacing: .12em; color: #b59b7d; }
+.fd-walletclose {
+  margin-top: 16px;
+  background: none;
+  border: 0;
+  color: #8f8b7c;
+  font: 10px var(--gr-mono);
+  letter-spacing: .14em;
+  cursor: pointer;
+}
+.fd-walletclose:hover { color: #e5d8bb; }
+
+.page-inner { min-height: 100vh; display: flex; flex-direction: column; }
+.page-main { width: min(100% - 8vw, 980px); margin: 0 auto; padding: 48px 0 80px; flex: 1; }
+.page-main h1 {
+  margin: 0;
+  font: 700 clamp(42px, 7vw, 88px)/.92 var(--gr-display);
+  color: #e5d8bb;
+  letter-spacing: -.03em;
+}
+.page-kicker {
+  margin: 0 0 22px;
+  font: 10px var(--gr-mono);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #c6ad85;
+}
+.page-lede { max-width: 58ch; font-size: 15px; line-height: 1.75; color: #b1b3a3; }
+.page-grid { display: grid; gap: 14px; margin-top: 36px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.page-card {
+  padding: 20px 22px;
+  border: 1px solid #554630;
+  background: linear-gradient(150deg, #272117, #151611 78%);
+}
+.page-card b { display: block; font: 22px var(--gr-display); color: #e5d8bb; margin-bottom: 8px; }
+.page-card p { margin: 0; font-size: 13px; line-height: 1.7; color: #b4ac9b; }
+.page-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+@media (min-width: 701px) and (max-height: 960px) {
+  #landing .fd-title { font-size: clamp(72px, 7vw, 108px) !important; }
+  #landing .fd-enter { font-size: clamp(24px, 2.4vw, 36px) !important; margin-top: 18px !important; }
+  #landing .fd-lede { margin-top: 12px !important; }
+  #landing .fd-eyebrow { margin-bottom: 22px !important; }
+  .os-entry { padding-top: 36px !important; }
+}
