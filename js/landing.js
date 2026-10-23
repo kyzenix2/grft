@@ -1,5 +1,5 @@
 (function () {
-  const CONTRACT = "0xd93ec2a7ab50a03fbafbfd65983903630933810e";
+  const CONTRACT = "0x880a43dbfcf6b185697c1522b311b36d38fbe962";
   const SYSTEMS = {
     bank: {
       title: "Bank & credit",
